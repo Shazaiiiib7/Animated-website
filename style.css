@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: regular;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+@font-face {
+    font-family: regular;
+    src: url('./ppmori.ttf');
+}
+.purple-page{
+    width: 100%;
+    height: 100vh;
+    background-color:white;
+    position: fixed;
+    z-index: 11;
+    opacity: 0;
+    display: none;
+    transition : all cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+}
+.line-anim{
+    position: absolute;
+    z-index: 12;
+    top: 28vmax;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    display: none;
+    transition : all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+}
+.line-anim .line{
+    color: white;
+    display: inline-block;
+    animation: marque linear 10s infinite;
+    white-space: nowrap;
+    font-size: 4vmax;
+    text-transform: uppercase;
+}
+@keyframes marque {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.main{
+    background-color: black;
+    color: white;
+    cursor: none;
+}
+.cursor{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    mix-blend-mode: difference;
+    position: fixed; 
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+    z-index: 100;
+    pointer-events: none;
+}
+.page-1 {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    padding: 0 2vmax;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: transparent;
+    mix-blend-mode: difference;
+    z-index: 12;
+}
+
+
+nav .logo-section img {
+    height: 23px;
+}
+
+nav .menu-section {
+    display: flex;
+    gap: 1.5vmax;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+nav .menu-section a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2vmax;
+    font-weight: 300;
+    cursor: none;
+}
+
+nav .info-section {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.page-1 .text-section {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7vmax;
+    position: relative;
+}
+
+.page-1 .text-section .upper-text,
+.page-1 .text-section .lower-text {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+.page-1 .text-section h1 {
+    font-size: 7vmax;
+    font-weight: 300;
+}
+
+.page-1 video {
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 7vmax;
+}
+
+/* Page 2 starts from here */
+
+.page-2 {
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    padding: 5vmax 4vmax;
+    display: flex;
+    flex-direction: column;
+    gap: 6vmax;
+}
+
+.page-2 h1 {
+    font-size: 6vmax;
+}
+
+.page-2 .text-section{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    gap: 8vmax;
+}
+.page-2 .text-section .left-section{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.page-2 .text-section .box{
+    display: flex;
+    flex-direction: column;
+    height: calc(60vh/3);
+    border-top: 2px solid black;
+    padding: 1vmax 0;
+    justify-content: center;
+    gap : 1vmax ;
+}
+.page-2 .text-section .box:nth-child(3) {
+    border-bottom: 2px solid black;
+}
+.page-2 .text-section .box .heading{
+    font-size: 3vmax;
+    font-weight: 100;
+}
+.page-2 .box .dscrption{
+    width : 60%;
+    line-height: 1.2;
+}
+.page-2 .text-section .right-section{
+    width: 30%;
+}
+.page-2 .btn{
+    width: fit-content;
+    padding: 0.5vmax 2vmax;
+    border-radius : 20px ;
+    background-color: transparent;
+    border: 1px solid black;
+    cursor: none;
+}
+.page-2 .btn:hover{
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+}
+
+/* page 3 starts from here */
+
+.page-3{
+    width: 100%;
+    height: 250vh;
+    position: relative;
+    padding: 4vmax;
+}
+.page-3 h1{
+    width: 38%;
+    font-size: 8vmax;
+}
+
+.page-3 #box1{
+    width:  35%;
+    height: 80vh;
+    position: absolute;
+    top: 40vmax;
+    overflow: hidden;
+    transition: blur ease 0.9s;
+}
+.page-3 #box1:hover #box1 img{
+    opacity: 0;
+   
+}
+.page-3 #box2{
+    width: 30%;
+    height: 75vh;
+    position: absolute;
+    right: 1vmax;
+    top: 10vmax;
+    overflow: hidden;
+}
+.page-3 #box2 video{
+   scale: 1.1;
+}
+.page-3 #box3{
+    width: 30%;
+    height: 80vh;
+    position: absolute;
+    left: 1vmax;
+    bottom: 5vmax;
+    overflow: hidden;
+}
+.page-3 #box4{
+    width: 30%;
+    height: 80vh;
+    position: absolute;
+    right: 1vmax;
+    background-image: url();
+    bottom: 25vmax;
+    background-position: center center;
+    overflow: hidden;
+
+}
+
+
+/* page 4 starts from here */
+
+.page-4{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    padding: 4vmax;
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+}
+.page-4 .upper-section{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+.page-4 .upper-section h1{
+    font-size: 8vmax;
+    width: 90%;
+}
+.page-4 .upper-section .circle{
+    width: 14vmax;
+    height: 14vmax;
+    background-color: rgb(255, 147, 183);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.page-5{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vmax;
+}
+.page-5 .option-container{
+    width: fit-content ;
+    height: 13vh;
+    display: flex;
+    justify-content: center;
+    
+}
+.page-5 .option-container:hover img{
+    opacity: 1;
+    transform: translateY(0vmax) rotate(0deg);
+}
+.page-5 .option-container .option{
+    width: fit-content;
+    overflow: hidden;
+    
+}
+.page-5 .option-container .lower{
+    color: rgb(197, 127, 255);
+}
+.page-5 .option-container .option:hover h1{
+    transform: translateY(-6.3vmax);
+}
+
+.page-5 .option-container h1{
+    font-size: 6vmax;
+    mix-blend-mode: difference;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.7s;
+}
+.page-5 .option-container img{
+    transform: translateY(5vmax) rotate(10deg);
+    position: absolute;
+    z-index: -1;
+    width: 15vmax;
+    opacity: 0;
+    transition : all ease 0.8s;
+}
+.page-5 .option-container img:nth-child(1){
+    top:  40%;
+    left: 25%;
+}
+.page-5 .option-container img:nth-child(3){
+    bottom:  40%;
+    right: 25%;
+}
+
+/* page 6 starts from here */
+
+.page-6{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 4vmax;
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+}
+.page-6>h1{
+    font-size: 7vmax;
+    font-weight: 500;
+}
+.page .location-section{
+    width: 100%; 
+}
+.page-6 .location-section .box{
+    width: 100%;
+    padding : 1vmax 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid white;
+    position: relative;
+}
+.page-6 .location-section .box:nth-child(5){
+    border-bottom: 2px solid white;
+}
+.page-6 .box h1{
+    font-size: 3vmax;
+    font-weight: 300;
+    opacity: 0.3;
+    transition: all ease 0.3s;
+}
+.page-6 .box h5{
+    transition: all ease 0.3s;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.3;
+}
+.page .box:hover h1,.page .box:hover h5{
+    opacity: 1;
+}
+.page-6 .box img{
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275)  0.3s;
+    position: absolute;
+    width: 20vmax;
+    z-index: 2;
+    opacity: 0;
+    object-fit: cover;
+}
+
+
+
+/* page-7 starts from here */
+.page-7{
+    width: 100%;
+    height: 100vh;
+    border: 2px solid green;
+    position: relative;
+}
